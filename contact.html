@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Portfolio | Contact</title>
+        <link rel="icon" href="nicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            emailjs.init('rApozW1_V6oulZst7');
+            document
+                .getElementById('contactForm')
+                .addEventListener('submit', function (e) {
+                e.preventDefault();
+                emailjs.sendForm('niranjan', 'template_ti9kf3s', this)
+                    .then(() => {
+                    alert('Message sent! I will contact you soon.');
+                    this.reset();
+                    })
+                    .catch(err => {
+                    console.error(err);
+                    alert('Oops—message not sent. Try again.');
+                    });
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <h1>D.Niranjan Kumar Reddy</h1>
+        </header>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="skill.html">Skills</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="certificate.html">Certifications</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+
+        <h1 class="section-title">Contact Me</h1>
+        <div class="form">
+            <form id="contactForm">
+                <p>Stay Connected</p>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" maxlength="100" required></textarea>
+                </div>
+                <input type="submit" value="Submit" class="submit-btn">
+            </form>
+        </div>
+
+        <footer class="foot">
+            <div class="socialmedia">
+                <a href="https://www.instagram.com/_.niranjan_reddy45._?igsh=MWRmcTFseXg4NDNiMg==" target="_blank"><img src="instalogoo.jpg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/dniranjankumarreddy/" target="_blank"><img src="linked.png" alt="Linkedin"></a>
+                <a href="https://www.x.com/iam_niranjan_45?t=Yf_v5GICQRQQdQEy15Ws9A&s=09" target="_blank"><img src="twitx.avif" alt="X"></a>
+            </div>
+        </footer>
+
+    </body>
+</html>
